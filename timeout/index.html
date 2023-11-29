@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" id="input" placeholder="Введите число от 1 до 10">
+        <button id="buttonStart">Start</button>
+        <button id="stop">Stop</button>
+        <p id="output"></p>
+    
+        <script>
+            let input = document.getElementById('input');
+            let start = document.getElementById('buttonStart');
+            let stop = document.getElementById('stop');
+            let output = document.getElementById('output');
+            let myValue = 0;
+            let timerId;
+    
+            const handlerAs = (event) => {
+                myValue = parseInt(event.target.value, 10);
+            }
+    
+            function myFun() {
+                if (myValue >= 1 && myValue <= 10) {
+                    clearInterval(timerId)
+                    timerId = setInterval(() => {
+                        myValue *= 2;
+                        output.textContent = `Число: ${myValue}`;
+                        if (myValue >= 10) {
+                        }
+                    }, 1000);
+                }
+            }
+    
+            function stopFunction() {
+                clearInterval(timerId);
+             
+            }
+    
+            start.addEventListener('click', myFun);
+            stop.addEventListener('click', stopFunction);
+            input.addEventListener('input', handlerAs);
+        </script>
+        
+    </body>
+    </html>
+    

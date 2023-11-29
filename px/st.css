@@ -1,0 +1,10 @@
+    @keyframes example{
+    from{
+        color: red;
+        transform: translateX(0px);
+    }
+    to{
+        color: black;
+        transform: translateX(1000px);
+    }
+}

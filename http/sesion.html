@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <script>
+        let input=document.getElementById('input')
+        let as=''
+        const ValueHandler = (event) => {
+    as = event.target.value
+}
+         const filter = async()=>{
+        const search= await fetch("https:jsonplaceholder.typicode.com/posts")
+        const result=await search.json()
+        result.forEach((element) => {
+            if(as==='userId'){
+                search.filter(as)
+                let p=document.createElement('p')
+                p.innerHTML=element.userId
+                document.body.append(p)
+            }
+        });
+     }
+     filter()
+    </script>
+</body>
+</html>

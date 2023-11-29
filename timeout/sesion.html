@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<script>
+
+let div=document.createElement('div')
+div.classList=('one')
+
+{
+setInterval(()=>{
+    if(div.classList=='one'){
+   return div.classList.add('two')
+    }
+    else {
+     div.classList.add('one')
+    }
+},1000)}
+document.body.append(div)
+
+</script>
+</body>
+</html>
